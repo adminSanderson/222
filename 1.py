@@ -7,9 +7,16 @@ cv2.error: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc
 
 import cv2
 import numpy as np
+import os
 
 # Load the mask image
-mask_img = cv2.imread('path/to/your/mask.png', -1)
+mask_path = os.path.abspath('C:/test/mask.png')  # Update the path to your mask image
+if not os.path.exists(mask_path):
+    raise FileNotFoundError(f"Mask image not found at {mask_path}")
+
+mask_img = cv2.imread(mask_path, -1)
+if mask_img is None:
+    raise ValueError("Unable to load mask image. Check file format and content.")
 
 capture = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
