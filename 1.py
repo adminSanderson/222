@@ -1,3 +1,12 @@
+PS C:\Users\alexk\OneDrive\Рабочий стол\Новая папка> & C:/Users/alexk/AppData/Local/Programs/Python/Python312/python.exe "c:/Users/alexk/OneDrive/Рабочий стол/Новая папка/333.py"
+[ WARN:0@0.013] global loadsave.cpp:248 cv::findDecoder imread_('path/to/your/mask.png'): can't open/read file: check file path/integrity
+Traceback (most recent call last):
+  File "c:\Users\alexk\OneDrive\Рабочий стол\Новая папка\333.py", line 42, in <module>
+    mask_resized = cv2.resize(mask_img, (w, h))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.9.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\resize.cpp:4152: error: (-215:Assertion failed) !ssize.empty() in function 'cv::resize'
+
+
 import cv2
 import numpy as np
 
